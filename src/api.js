@@ -3,9 +3,6 @@ import axios from 'axios'
 
 const API_URL = process.env.VUE_APP_API_URL
 
-console.log("API_URL: ", `${API_URL}`)
-console.log("Just checking..: ", process.env.VUE_APP_API_URL) 
-
 export function fetchReviews() {
     return axios.get(`${API_URL}/`)
 }

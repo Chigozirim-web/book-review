@@ -11,11 +11,11 @@
       </div>
       <div class="mb-3">
           <label class="form-label">Your Review: </label>
-          <input type="text" class="form-control" v-model="review" placeholder="Insert here">
+          <input style="height:200px; font-size:14pt;" type="text" class="form-control" v-model="review" placeholder="Insert here">
       </div>
       <div class="mb-3">
           <label class="form-label">Any extra note? </label>
-          <input type="text" class="form-control" v-model="note" placeholder="Insert here">
+          <input type="text" style="height:200px; font-size:14pt;" class="form-control" v-model="note" placeholder="Insert here">
       </div>
       <button type="submit" class="btn btn-primary btn-dark">Submit New review </button>
     </form>
@@ -41,11 +41,11 @@ export default {
         author: this.author,
         review: this.review,
         note: this.note
-      }).then(() => this.$router.push('/dashboard'))
+      }).then(() => this.$router.push({ name: 'Dashboard'}))
       .catch((error) => {
           console.log("Error Creating new Review: ", error)
           this.$store.state.Errormsg = error
-          this.$router.push('/login')
+          this.$router.push({ name: 'login'})
       })
       
     }

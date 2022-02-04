@@ -61,9 +61,11 @@ const routes = [
     }
 ]
 
+const base_uri = process.env.BASE_URL
+console.log("Base uri is: ", base_uri)
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory(base_uri),
     routes,
 })
 

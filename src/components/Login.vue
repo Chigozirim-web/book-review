@@ -4,7 +4,7 @@
     <form class="page-border" @submit.prevent="login">
        <h6> Already have an account? Login </h6>
        <h5> If not, sign up here
-           <router-link class="btn btn-dark btn-sm" aria-current="page" to="/sign-up">Sign Up</router-link> 
+           <router-link class="btn btn-dark btn-sm" aria-current="page" :to="{ name: 'signup'}">Sign Up</router-link> 
        </h5>
         <div class="mb-3">
             <label for="username" class="form-label">Username </label>
@@ -36,7 +36,7 @@ export default {
           this.$store.dispatch('login', {
               username: this.username,
               password: this.password
-          }).then(() => this.$router.push('/dashboard'))
+          }).then(() => this.$router.push({ name: 'Dashboard'}))
       }
     },
 

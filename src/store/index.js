@@ -81,12 +81,13 @@ const mutations = {
     },
     
     setUserData(state, payload) {
-        localStorage.setItem('user', payload.userData.username)
+
+        //localStorage.setItem('user', payload.userData.username)
         state.user = payload.userData.username
     },
 
     setJwtToken(state, payload) {
-        localStorage.setItem('token', payload.jwt.token)
+        //localStorage.setItem('token', payload.jwt.token)
         state.jwt = payload.jwt
     },
 
@@ -116,7 +117,6 @@ const dataState = createPersistedState({
     paths: ['jwt', 'user'],
     storage: {
         getItem: (key) => Cookies.get(key),
-
         setItem: (key, value) =>
           Cookies.set(key, value, { secure: true }),
         removeItem: (key) => Cookies.remove(key),

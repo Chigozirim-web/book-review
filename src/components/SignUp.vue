@@ -4,7 +4,7 @@
     <form class="page-border" @submit.prevent="register">
       <h6> Don't have an account? Sign up </h6>
       <h5> If not, login here
-          <router-link class="btn btn-dark btn-sm" aria-current="page" to="/login">Login</router-link> 
+          <router-link class="btn btn-dark btn-sm" aria-current="page" :to="{ name: 'login'}">Login</router-link> 
       </h5>
       <div class="mb-3">
           <label for="username" class="form-label">Username </label>
@@ -45,7 +45,7 @@ export default {
         username: this.username,
         password: this.password,
         password_confirm: this.password_confirm
-        }).then(() => this.$router.push('/login'))
+        }).then(() => this.$router.push({name: 'login'}))
         .catch((error) => {
             console.log('Error Registering: ', error)
             this.$store.state.Errormsg = error

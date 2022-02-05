@@ -1,33 +1,37 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <router-link class="navbar-brand text-style" :to="{ name: 'home' }"> Book Review App</router-link>
+        <div class="container-fluid">
+            <router-link class="navbar-brand text-style" :to="{ name: 'home' }"  aria-current="page"> Book-Review! </router-link>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-2">
-                        <router-link class="btn btn-primary" aria-current="page" :to="{ name: 'home' }">Home</router-link>
-                    </li>
-                    <li class="nav-item">
-                        <router-link class="btn btn-primary btn-light" aria-current="page" v-if="isAuthenticated" :to="{ name: 'Dashboard'}">Dasboard </router-link>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <router-link class="btn btn-success" v-if="isAuthenticated" :to="{ name: 'create' }">Create New Review</router-link>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <router-link class="btn btn-secondary" aria-current="page" v-if="!isAuthenticated" :to="{ name: 'login'}">Login</router-link>
-                    </li>
-                    <li class="nav-item">
-                        <router-link class="btn btn-secondary" aria-current="page" v-if="!isAuthenticated" :to="{ name: 'signup'}">Sign Up</router-link>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="btn btn-danger" v-if="isAuthenticated" @click="handleClick">Logout</a>
-                    </li>
-                </ul>
+            <div class="collapse navbar-collapse my-2" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item mx-4">
+                    <router-link class="nav-link active" aria-current="page" :to="{ name: 'home' }"> Home</router-link>
+                </li>
+                <li class="nav-item mx-4">
+                    <router-link class="nav-link" aria-current="page" v-if="isAuthenticated" :to="{ name: 'Dashboard'}">Dasboard </router-link>
+                </li>
+                <li class="nav-item mx-4">
+                    <router-link class="nav-link" v-if="isAuthenticated" :to="{ name: 'create' }">Create New Review</router-link>
+                </li>
+                <li class="nav-item mx-4">
+                    <router-link class="nav-link" aria-current="page" v-if="!isAuthenticated" :to="{ name: 'login'}">Login</router-link>
+                </li>
+                <li class="nav-item mx-4">
+                    <router-link class="nav-link" aria-current="page" v-if="!isAuthenticated" :to="{ name: 'signup'}">Sign Up</router-link>
+                </li>
+                <li class="nav-item mx-4">
+                    <a class="btn btn-danger" v-if="isAuthenticated" @click="handleClick">Logout</a>
+                </li>
+            </ul>
             </div>
         </div>
     </nav>
 </template>
+
 
 <script>
 import Cookies from 'js-cookie'
@@ -60,6 +64,9 @@ export default {
     font-family: fantansy !important;
     color: brown !important;
 }
+
+ 
+
 </style>
 
 

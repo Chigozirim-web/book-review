@@ -1,5 +1,5 @@
 <template>
-  <div id="app" style="background-color: rgb(250, 235, 215);"> 
+  <div id="app" > 
     <Navbar />
     <alert :error=err :success=succ> </alert>
     <router-view/>

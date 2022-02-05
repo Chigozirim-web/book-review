@@ -72,11 +72,11 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Your Review: </label>
-                    <input type="text" class="form-control" v-model="review" placeholder="Insert here">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" v-model="review" placeholder="Insert here"></textarea>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Any extra note? </label>
-                    <input type="text" class="form-control" v-model="note" placeholder="Insert here">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="note" placeholder="Insert here"></textarea>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

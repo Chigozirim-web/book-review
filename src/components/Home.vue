@@ -2,11 +2,32 @@
 <template>
   <div >
     <br>
-    <section style="text-align: center;">  
+    <div v-if="isEmpty(reviews)" class="card text-center" style="margin:130px; background-color:rgb(71, 68, 65); width:80%">
+      <div class="card-header">
+       <span style='font-size:40px; color:brown; font-family:Verdana'> No Reviews have been created yet &#128532;</span> 
+      </div>
+
+      <div class="card-body">
+        <h4> <p class="card-text follow"> Submit great book reviews now for others to see! </p> </h4>
+      </div>
+
+      <div class="card-footer text-muted">
+          <div class="row justify-content-center">
+            <div class="col-4"> 
+            <router-link class="btn btn-secondary" :to="{ name: 'login'}">Login</router-link>
+            </div>
+            <div class="col-4">
+            <router-link class="btn btn-secondary" :to="{ name: 'signup'}">Sign Up</router-link>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <section v-if="!isEmpty(reviews)" style="text-align: center;">  
       <h2 style="font-family: Cursive"> Check out these awesome book reviews from fellow users! </h2>
     </section>
     
-    <div class="container overflow-hidden row gy-3 center">
+    <div v-if="!isEmpty(reviews)" class="container overflow-hidden row gy-3 center">
       <div v-for="review in reviews" :key="review.rid" >
         <div class="col-12 p-3 border bg-dark" style="color: rgb(250, 235, 215)"> 
           <h2> {{review.book}} </h2>
@@ -39,6 +60,12 @@ export default {
   },
 
   methods: {
+
+    isEmpty(check) {
+      if(check.length == 0) return true
+      else return false
+    },
+
     go(id) {
       this.$store.dispatch('loadReview', { rid: parseInt(id) })
       .then(() => {
@@ -56,7 +83,7 @@ export default {
   color: brown;
   font-size: 20px;
 }
-
+/* rgb(209, 214, 216)*/
 .center {
   margin: auto;
   width: 80%;

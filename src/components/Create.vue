@@ -11,11 +11,11 @@
       </div>
       <div class="mb-3">
           <label class="form-label">Your Review: </label>
-          <input style="height:200px; font-size:14pt;" type="text" class="form-control" v-model="review" placeholder="Insert here">
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" v-model="review" placeholder="Insert here"></textarea>
       </div>
       <div class="mb-3">
           <label class="form-label">Any extra note? </label>
-          <input type="text" style="height:200px; font-size:14pt;" class="form-control" v-model="note" placeholder="Insert here">
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" v-model="note" placeholder="Insert here"></textarea>
       </div>
       <button type="submit" class="btn btn-primary btn-dark">Submit New review </button>
     </form>
@@ -30,7 +30,7 @@ export default {
       book: '',
       author: '',
       review: '',
-      note: ''
+      note: '',
     }
   },
 

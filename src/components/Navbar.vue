@@ -12,7 +12,7 @@
                     <router-link class="nav-link active" aria-current="page" :to="{ name: 'home' }"> Home</router-link>
                 </li>
                 <li class="nav-item mx-4">
-                    <router-link class="nav-link" aria-current="page" v-if="isAuthenticated" :to="{ name: 'Dashboard'}">Dasboard </router-link>
+                    <router-link class="nav-link" aria-current="page" v-if="isAuthenticated" :to="{ name: 'Dashboard'}">Dashboard </router-link>
                 </li>
                 <li class="nav-item mx-4">
                     <router-link class="nav-link" v-if="isAuthenticated" :to="{ name: 'create' }">Create New Review</router-link>

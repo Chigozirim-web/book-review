@@ -1,3 +1,7 @@
+## A book review/recommendation App
+### Front end developed using VueJS and backend with Python's flask library
+
+
 # frontend
 
 ## Project setup
